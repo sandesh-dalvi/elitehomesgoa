@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../output.css" />
+    <title>Elite Homes</title>
+  </head>
+  <body>
+    <header
+      class="primary-header fixed inset-0 w-full h-[50px] z-[9999999]"
+      id="primary-header"
+    >
+      <nav
+        class="w-full transition-all duration-500 bg-[#00000095] flex justify-between items-center shadow-md"
+        id="nav-header-primary"
+      >
+        <div class="p-6 px-12">
+          <img
+            src="../assets/images/logo.png"
+            class="max-w-[220px] transition-all duration-700"
+            id="nav-logo"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex justify-center items-center lg:hidden cursor-pointer mr-8"
+          onclick="showSidebar()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28"
+            viewBox="0 -960 960 960"
+            width="28"
+            class="fill-white h-10 w-10 bg-[#00000060] rounded-lg"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </div>
+        <ul
+          class="transition-all duration-700 flex lg:hidden flex-col justify-start items-start fixed top-0 right-0 h-screen bg-white w-0 shadow-lg"
+          id="sidebar"
+        >
+          <li class="w-full cursor-pointer ml-6" onclick="hideSidebar()">
+            <a href="#" class="p-6 flex items-center hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="28"
+                viewBox="0 -960 960 960"
+                width="28"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href="../"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Home</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../projects/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../gallery/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../our-journey/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Our Journey</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../contact/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+        <ul
+          class="w-full hidden lg:flex transition-all duration-500 justify-end items-center pr-6 lg:pr-12 xl:pr-16 2xl:pr-36 text-white font-bold text-lg xl:text-xl 2xl:text-2xl"
+          id="nav-items-header"
+        >
+          <li>
+            <a href="../" class="px-8 flex items-center hover:text-primary"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="../projects/"
+              class="px-8 flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="../gallery/"
+              class="px-8 flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="../our-journey/"
+              class="px-8 flex items-center hover:text-primary"
+              >Our Journey</a
+            >
+          </li>
+          <li>
+            <a
+              href="../contact/"
+              class="px-8 flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="preloader">
+      <img src="../assets/images/loader.gif" alt="" />
+    </div>
+
+    <section class="faqs-hero-section h-[50vh] md:h-[45]">
+      <div class="relative isolate flex flex-col w-full">
+        <img
+          src="../assets/images/faq1.jpg"
+          class="object-cover h-[50vh] md:h-[45]"
+          alt=""
+        />
+        <div
+          class="absolute inset-0 w-full h-full z-[0] bg-green-950 opacity-75"
+        ></div>
+        <div
+          class="absolute inset-0 z-[1] left-[10%] top-[45%] lg:left-[5%] xl:left-[10%] 2xl:left-[15%]"
+        >
+          <div class="text-white">
+            <h1 class="font-bold text-[40px] md:text-[5.325rem] leading-[1.2]">
+              Frequently Asked Questions
+            </h1>
+            <!-- <p class="mt-2 text-base xl:text-lg">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+              dignissimos.
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faqs" id="faqs-section">
+      <div class="p-4 py-6 flex justify-center items-center">
+        <div class="xl:max-w-[1500px]">
+          <div class="text-center">
+            <h2
+              class="font-extrabold text-base md:text-lg xl:text-xl 2xl:text-2xl"
+            >
+              <span class="text-secondary">FAQ's</span>
+            </h2>
+            <h3
+              class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-3"
+            >
+              Have questions? We have answers!
+            </h3>
+            <p
+              class="text-neutral-600 font-medium lg:text-lg xl:text-xl 2xl:text-2xl py-1 md:pb-4 xl:py-6"
+            >
+              Explore our frequently asked questions to find the information you
+              need. If you don't see your question answered here, feel free to
+              Contact Us for further assistance.
+            </p>
+          </div>
+          <div
+            class="md:flex justify-center items-center gap-4 lg:gap-8 xl:gap-12 2xl:gap-16"
+          >
+            <div class="py-4">
+              <div class="xl:w-[700px] accordion-wrapper">
+                <div class="accordion">
+                  <input
+                    type="radio"
+                    name="radio-a"
+                    id="check1"
+                    checked
+                    onchange="handleChange()"
+                  />
+                  <label class="accordion-label" for="check1">General</label>
+                  <div class="accordion-content">
+                    <details
+                      open
+                      class="marker:text-primary marker:text-xl p-1 question1"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What is Elite Homes' area of expertise in construction?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        Elite Homes specializes in residential construction,
+                        including luxury villas and homes.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question1"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Where do elite homes operate?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We operate in prime locations all over India, offering
+                        our construction services.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question1"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What sets Elite Homes apart from other construction
+                        companies?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        Our commitment to quality, attention to detail, and
+                        customer satisfaction make us stand out. We bring luxury
+                        and excellence to every project.
+                      </h3>
+                    </details>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input
+                    type="radio"
+                    name="radio-a"
+                    id="check2"
+                    onchange="handleChange()"
+                  />
+                  <label class="accordion-label" for="check2"
+                    >Construction Process</label
+                  >
+                  <div class="accordion-content">
+                    <details
+                      open
+                      class="marker:text-primary marker:text-xl p-1 question2"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What is the typical construction timeline for a luxury
+                        villa?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        The construction timeline can vary depending on the
+                        project's size and complexity, but we aim for efficient
+                        and timely completion.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question2"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        How does Elite Homes ensure quality during construction?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We employ skilled professionals, use high-quality
+                        materials, and follow rigorous quality control measures
+                        at every stage of construction.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question2"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Can I visit the construction site during the building
+                        process?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        Yes, we encourage our clients to visit the site and stay
+                        informed about the progress. Customization and Design:
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question2"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Do you offer customization options for the design of our
+                        home?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        Yes, we work closely with our clients to create
+                        personalized, unique designs that meet their preferences
+                        and requirements.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question2"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What architectural styles does Elite Homes offer for
+                        luxury villas?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We offer a range of architectural styles, from
+                        contemporary to traditional, ensuring you find the
+                        perfect design for your dream home.
+                      </h3>
+                    </details>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input
+                    type="radio"
+                    name="radio-a"
+                    id="check3"
+                    onchange="handleChange()"
+                  />
+                  <label class="accordion-label" for="check3"
+                    >Budget and Cost</label
+                  >
+                  <div class="accordion-content">
+                    <details
+                      open
+                      class="marker:text-primary marker:text-xl p-1 question3"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        How do you handle budgeting and cost estimation?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We provide transparent and detailed cost estimates, and
+                        we work to stay within the agreed budget while
+                        maintaining quality.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question3"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Are there any hidden costs associated with Elite Homes'
+                        construction services?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        No, we are committed to transparency, and there are no
+                        hidden costs. We provide a clear breakdown of expenses.
+                      </h3>
+                    </details>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input
+                    type="radio"
+                    name="radio-a"
+                    id="check4"
+                    onchange="handleChange()"
+                  />
+                  <label class="accordion-label" for="check4"
+                    >Project Management</label
+                  >
+                  <div class="accordion-content">
+                    <details
+                      open
+                      class="marker:text-primary marker:text-xl p-1 question4"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Who will oversee the construction of our home?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We have experienced project managers who will coordinate
+                        and oversee every aspect of your construction project.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question4"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What measures does Elite Homes take to ensure safety on
+                        the construction site?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        Safety is a top priority, and we follow
+                        industry-standard safety protocols and provide proper
+                        training to our workers.
+                      </h3>
+                    </details>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input
+                    type="radio"
+                    name="radio-a"
+                    id="check5"
+                    onchange="handleChange()"
+                  />
+                  <label class="accordion-label" for="check5"
+                    >Completion and Handover</label
+                  >
+                  <div class="accordion-content">
+                    <details
+                      open
+                      class="marker:text-primary marker:text-xl p-1 question5"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        What happens after the construction is completed?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We conduct a final inspection, address any remaining
+                        concerns, and then hand over the keys to your new luxury
+                        villa.
+                      </h3>
+                    </details>
+                    <details
+                      class="marker:text-primary marker:text-xl p-1 question5"
+                    >
+                      <summary
+                        class="text-justify cursor-pointer font-bold rounded-lg bg-white p-2"
+                      >
+                        Do you provide any post-construction support or
+                        maintenance services?
+                      </summary>
+                      <h3
+                        class="text-neutral-600 font-medium p-2 pl-5 bg-white"
+                      >
+                        We can discuss post-construction maintenance and support
+                        services as needed.
+                      </h3>
+                    </details>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2 justify-center items-center py-3 gap-2 md:gap-4"
+              >
+                <div
+                  class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2"
+                >
+                  <div
+                    class="p-4 border-2 border-primary flex justify-center items-center aspect-square transition-all duration-700 hover:border-black hover:bg-primary text-primary hover:text-white"
+                  >
+                    <i class="fa-solid fa-envelope text-3xl"></i>
+                  </div>
+                  <p class="text-secondary font-semibold">
+                    elitehomes57@gmail.com
+                  </p>
+                </div>
+                <div
+                  class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2"
+                >
+                  <div
+                    class="p-4 border-2 border-primary flex justify-center items-center aspect-square transition-all duration-700 hover:border-black hover:bg-primary text-primary hover:text-white"
+                  >
+                    <i class="fa-solid fa-phone-volume text-3xl"></i>
+                  </div>
+                  <p class="text-secondary font-semibold">9513105757</p>
+                </div>
+              </div>
+            </div>
+            <div class="w-full xl:w-[700px] overflow-hidden">
+              <img
+                id="checkimg"
+                src="../assets/images/logo.png"
+                class="object-cover w-full transition-all duration-500"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-contact relative isolate flex">
+      <div class="absolute inset-0 w-full h-full bg-black opacity-70 z-0"></div>
+      <div class="p-4 md:p-8 py-12 md:py-24 z-10 text-white text-center w-full">
+        <h2 class="text-lg lg:text-xl font-bold py-4">
+          Get Closed <span class="text-primary">with Us</span>
+        </h2>
+        <h3 class="font-bold text-4xl md:text-5xl lg:text-6xl py-4">
+          Discuss with Us About Your Dream House
+        </h3>
+        <div class="flex justify-center">
+          <!-- <p class="py-2 lg:text-base xl:max-w-3xl">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            doloribus eius mollitia voluptatem iusto facere et laboriosam,
+            necessitatibus nam soluta deleniti, unde voluptatum.
+          </p> -->
+        </div>
+        <div class="py-2 pt-6">
+          <a
+            href="../contact/"
+            class="p-4 px-6 font-medium inline-block text-white text-center shadow-2xl transition-all duration-500 bg-primary uppercase scale-100 hover:scale-105"
+            >Get Appointment</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="primary-footer bg-neutral-100">
+      <div class="p-4 py-6 flex justify-center md:pt-8">
+        <div class="max-w-[1400px]">
+          <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-4">
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <img
+                src="../assets/images/logo.png"
+                class="max-w-[200px]"
+                alt=""
+              />
+              <p class="max-w-sm text-center font-semibold xl:text-lg">
+                Elite Homes, we are dedicated to crafting exceptional living
+                spaces that reflect quality, innovation, and a legacy of
+                excellence.
+              </p>
+            </div>
+            <div class="flex justify-between gap-2">
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Important Link
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold md:font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="../contact/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Contact Us</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="../projects/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Projects</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Resources
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="../gallery/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Gallery</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="../faqs/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>FAQs</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 items-center pb-4">
+              <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">Contact</h3>
+              <ul
+                class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+              >
+                <li class="flex justify-center gap-2">
+                  <!-- <span>Address: </span> -->
+                  <h3 class="text-center">
+                    Office No.208, 2nd Floor, Gogol Vista, Margao, Goa -
+                    403601,India
+                  </h3>
+                </li>
+                <!-- <li class="flex gap-2">
+                  <span>Email: </span>
+                  <h3>elitehomes57@gmail.com</h3>
+                </li>
+                <li class="flex gap-2">
+                  <span>Phone: </span>
+                  <h3>9527105757/8007663535</h3>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-2 pb-2">
+            <ul
+              class="flex gap-6 w-full justify-center md:justify-end items-center"
+            >
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-facebook-f text-2xl transition-all duration-700 text-primary"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-x-twitter text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-instagram text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <!-- <li>
+                <a href="#"
+                  ><i
+                    class="fa-brands fa-square-pinterest text-green-600 text-4xl transition-all duration-700 hover:text-primary"
+                  ></i
+                ></a>
+              </li> -->
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-youtube transition-all duration-700 text-2xl text-primary"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+            <div class="w-full text-center md:text-base font-medium xl:text-lg">
+              <h3>
+                License in Construction of Residential and Commercial Buildings
+                , Developing of land and Real Estate activities, land Trading.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary text-white font-medium p-4 text-center">
+        <span
+          >Copyright © 2023 Elite Homes. All Rights Reserved by Samrdh Design
+          Studio & Branding</span
+        >
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const handleChange = () => {
+        if (document.getElementById("check1").checked) {
+          document.getElementById("checkimg").src = "../assets/images/logo.png";
+          document.getElementById("faqs-section").style.backgroundColor =
+            "#ffffff";
+        }
+        if (document.getElementById("check2").checked) {
+          document.getElementById("checkimg").src =
+            "../assets/images/about1.png";
+          document.getElementById("faqs-section").style.backgroundColor =
+            "#ffffff";
+        }
+        if (document.getElementById("check3").checked) {
+          document.getElementById("checkimg").src =
+            "../assets/images/faq/budget.png";
+          document.getElementById("faqs-section").style.backgroundColor =
+            "#ffffff";
+        }
+        if (document.getElementById("check4").checked) {
+          document.getElementById("checkimg").src =
+            "../assets/images/faq/project.png";
+          document.getElementById("faqs-section").style.backgroundColor =
+            "#ffffff";
+        }
+        if (document.getElementById("check5").checked) {
+          document.getElementById("checkimg").src =
+            "../assets/images/faq/completion.png";
+          document.getElementById("faqs-section").style.backgroundColor =
+            "#ffffff";
+        }
+      };
+    </script>
+
+    <script src="../js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script>
+      const question1 = document.querySelectorAll(".question1");
+      const question2 = document.querySelectorAll(".question2");
+      const question3 = document.querySelectorAll(".question3");
+      const question4 = document.querySelectorAll(".question4");
+      const question5 = document.querySelectorAll(".question5");
+
+      question1.forEach((question) => {
+        question.addEventListener("click", () => {
+          question1.forEach((detail) => {
+            if (detail !== question) {
+              detail.removeAttribute("open");
+            }
+          });
+        });
+      });
+      question2.forEach((question) => {
+        question.addEventListener("click", () => {
+          question2.forEach((detail) => {
+            if (detail !== question) {
+              detail.removeAttribute("open");
+            }
+          });
+        });
+      });
+      question3.forEach((question) => {
+        question.addEventListener("click", () => {
+          question3.forEach((detail) => {
+            if (detail !== question) {
+              detail.removeAttribute("open");
+            }
+          });
+        });
+      });
+      question4.forEach((question) => {
+        question.addEventListener("click", () => {
+          question3.forEach((detail) => {
+            if (detail !== question) {
+              detail.removeAttribute("open");
+            }
+          });
+        });
+      });
+      question5.forEach((question) => {
+        question.addEventListener("click", () => {
+          question4.forEach((detail) => {
+            if (detail !== question) {
+              detail.removeAttribute("open");
+            }
+          });
+        });
+      });
+
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        // console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

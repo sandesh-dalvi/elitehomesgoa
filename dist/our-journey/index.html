@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../output.css" />
+    <title>Elite Homes</title>
+  </head>
+  <body>
+    <header
+      class="primary-header fixed inset-0 w-full h-[50px] z-[9999999]"
+      id="primary-header"
+    >
+      <nav
+        class="w-full transition-all duration-500 bg-[#00000095] flex justify-between items-center shadow-md"
+        id="nav-header-primary"
+      >
+        <div class="p-6 px-12">
+          <img
+            src="../assets/images/logo.png"
+            class="max-w-[220px] transition-all duration-700"
+            id="nav-logo"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex justify-center items-center lg:hidden cursor-pointer mr-8"
+          onclick="showSidebar()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28"
+            viewBox="0 -960 960 960"
+            width="28"
+            class="fill-white h-10 w-10 bg-[#00000060] rounded-lg"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </div>
+        <ul
+          class="transition-all duration-700 flex lg:hidden flex-col justify-start items-start fixed top-0 right-0 h-screen bg-white w-0 shadow-lg"
+          id="sidebar"
+        >
+          <li class="w-full cursor-pointer ml-6" onclick="hideSidebar()">
+            <a href="#" class="p-6 flex items-center hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="28"
+                viewBox="0 -960 960 960"
+                width="28"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href="../"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Home</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../projects/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../gallery/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../our-journey/"
+              class="p-8 w-full flex items-center hover:text-primary text-primary"
+              >Our Journey</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="../contact/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+        <ul
+          class="w-full hidden lg:flex transition-all duration-500 justify-end items-center pr-6 lg:pr-12 xl:pr-16 2xl:pr-36 text-white font-bold text-lg xl:text-xl 2xl:text-2xl"
+          id="nav-items-header"
+        >
+          <li>
+            <a href="../" class="px-8 flex items-center hover:text-primary"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="../projects/"
+              class="px-8 flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="../gallery/"
+              class="px-8 flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="../our-journey/"
+              class="px-8 flex items-center hover:text-primary text-primary font-extrabold"
+              >Our Journey</a
+            >
+          </li>
+          <li>
+            <a
+              href="../contact/"
+              class="px-8 flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="preloader">
+      <img src="../assets/images/loader.gif" alt="" />
+    </div>
+
+    <section class="about-hero-section h-[60vh] md:h-[65vh] lg:h-[75vh]">
+      <div class="relative isolate flex flex-col w-full">
+        <img
+          src="../assets/images/our-journey/Journey.png"
+          class="object-cover h-[60vh] md:h-[65vh] lg:h-[75vh]"
+          alt=""
+        />
+        <div
+          class="absolute inset-0 w-full h-full z-[0] bg-green-950 opacity-75"
+        ></div>
+        <div
+          class="absolute inset-0 z-[1] top-[40%] left-[10%] lg:top-[50%] lg:left-[5%] xl:left-[10%] 2xl:left-[15%]"
+        >
+          <div class="text-white md:max-w-[500px] xl:max-w-xl 2xl:max-w-2xl">
+            <h1
+              class="font-bold text-[40px] max-w-xs md:text-6xl lg:text-7xl md:max-w-xl 2xl:text-[5rem] leading-[1.2]"
+            >
+              Our Journey
+            </h1>
+            <!-- <p class="mt-2 text-base xl:text-lg">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam,
+              dignissimos.
+            </p> -->
+          </div>
+        </div>
+        <div
+          class="absolute m-4 z-[1] top-[55%] right-0 lg:right-[10%] bg-white shadow-xl rounded-sm md:w-[290px] md:h-[200px] p-8 flex flex-col justify-center items-center"
+        >
+          <h2 class="font-bold text-2xl">Designing Lifestyle</h2>
+          <!-- <p class="text-neutral-600 my-2">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+              repellendus?
+            </p> -->
+
+          <a
+            href="../projects/"
+            class="bg-primary inline-block mt-2 transition-all duration-500 p-4 px-6 text-white text-center font-medium shadow-2xl rounded-2xl scale-100 hover:scale-95"
+            >Explore Our Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="p-4 py-6 md:py-8 xl:pb-10">
+        <div
+          class="flex flex-col-reverse gap-1 md:gap-6 lg:flex-row justify-center items-center"
+        >
+          <div>
+            <div
+              class="flex flex-col md:flex-row lg:flex-col justify-center items-center gap-2 md:gap-6"
+            >
+              <div class="max-w-md lg:max-w-lg">
+                <img src="../assets/images/logo.png" alt="" />
+              </div>
+              <div
+                class="py-6 flex flex-col gap-1 lg:flex-row md:gap-8 md:max-w-xs lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl"
+              >
+                <div>
+                  <h2 class="font-bold text-2xl py-2">The Vision</h2>
+                  <p class="text-neutral-500 md:text-base lg:font-medium">
+                    Becoming the Most Admired and Trusted Provider of
+                    Professional Construction Services.
+                  </p>
+                </div>
+                <div>
+                  <h2 class="font-bold text-2xl py-2">The Mission</h2>
+                  <p class="text-neutral-500 md:text-base lg:font-medium">
+                    Bringing Innovation and Customized Solutions to Life with
+                    Unmatched Team Spirit and Results.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl">
+            <div class="flex flex-col-reverse md:flex-col">
+              <div>
+                <h5
+                  class="text-base lg:text-lg xl:text-xl 2xl:text-2xl font-bold leading-[1em] mt-5"
+                >
+                  All About <span class="text-secondary">Elite Homes</span>
+                </h5>
+                <h2
+                  class="text-3xl font-bold leading-[1.1em] md:text-4xl xl:text-5xl mt-4"
+                >
+                  Crafting Dreams, Building Futures
+                </h2>
+                <p
+                  class="text-base text-neutral-500 font-normal mt-4 lg:font-medium"
+                >
+                  Elite Homes, a leading construction company in Goa, has 6
+                  years of industry experience. It all began in 2017 when
+                  Mohammad Juned Killedar, Saddam Hussain Kuknoor, and Syed
+                  Furqanul Haque, launched their construction business as a
+                  small-scale service providers. Through hard work and
+                  determination, the company transitioned to a sole
+                  proprietorship in the same year and was officially registered
+                  as Elite Homes. This family business follows a rich ancestral
+                  tradition in the construction industry. We hold an ISO
+                  certification, recognizing our commitment to international
+                  standards.
+                </p>
+                <p
+                  class="text-base text-neutral-500 font-normal mt-4 lg:font-medium"
+                >
+                  We are engaged in all construction activities such as
+                  Construction of Residential and Commercial Buildings,
+                  Developing of land and Real Estate activities, and land
+                  Trading.
+                </p>
+                <p
+                  class="text-base text-neutral-500 font-normal my-4 lg:font-medium"
+                >
+                  We are dedicated to delivering exceptional and distinct
+                  finishes in every project we handle. Our track record proves
+                  our expertise in assembling the right experience. We also
+                  embrace modern technology and methods to ensure customer
+                  satisfaction and timely project delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row gap-2 md:gap-4 justify-center items-center pt-1 md:pt-4 2xl:pt-6 md:pb-6"
+        >
+          <div class="md:max-w-lg xl:max-w-3xl">
+            <h2 class="text-3xl font-bold leading-[1.1em] mt-4">
+              Why Choose Us?
+            </h2>
+            <p
+              class="text-base text-neutral-500 font-normal mt-4 lg:font-medium"
+            >
+              When you choose Elite Homes, you're choosing a construction
+              partner that excels in quality, backs its work with warranties,
+              values punctuality, and maintains the financial strength required
+              for a seamless construction journey. Your dream project is in
+              capable hands with Elite Homes.
+            </p>
+          </div>
+
+          <div class="certificate-slider">
+            <ul class="m-0 p-0">
+              <li>
+                <img
+                  src="../assets/images/our-journey/Crafting Dreams.png"
+                  class="w-[400px] h-[400px]"
+                  alt=""
+                />
+              </li>
+              <li>
+                <img
+                  src="../assets/images/certificate.jpg"
+                  class="w-[400px] h-[400px]"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex justify-center items-center bg-slate-50">
+      <div
+        class="p-4 py-6 md:py-8 xl:py-10 md:max-w-3xl lg:max-w-5xl xl:max-w-6xl"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 xl:gap-10">
+          <div
+            class="flex flex-col justify-start items-center shadow-lg p-4 rounded-xl transition-all duration-700 scale-100 bg-slate-200 text-black xl:shadow-2xl hover:scale-105 hover:bg-white"
+          >
+            <img
+              src="../assets/images/our-journey/quality.png"
+              class="max-w-[200px]"
+              alt=""
+            />
+            <h2 class="text-center font-bold text-2xl">Quality</h2>
+            <p class="font-medium">
+              Our unwavering commitment to quality sets us apart. We don't
+              compromise on the materials we use or the craftsmanship we
+              provide. From foundation to finishing touches, we prioritize
+              excellence, ensuring that every detail of your project is of the
+              highest standard. Your satisfaction and the durability of our work
+              are paramount.
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center shadow-lg p-4 rounded-xl transition-all duration-700 scale-100 bg-slate-200 text-black xl:shadow-2xl hover:scale-105 hover:bg-white"
+          >
+            <img
+              src="../assets/images/our-journey/warranty.png"
+              class="max-w-[200px]"
+              alt=""
+            />
+            <h2 class="text-center font-bold text-2xl">Warranty</h2>
+            <p class="font-medium">
+              We stand behind our work with confidence. To offer you peace of
+              mind, we provide warranties that demonstrate our belief in the
+              longevity and quality of our construction. We're not just building
+              for today; we're building for your future, and our warranty
+              reflects our commitment to your long-term satisfaction.
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center shadow-lg p-4 rounded-xl transition-all duration-700 scale-100 bg-slate-200 text-black xl:shadow-2xl hover:scale-105 hover:bg-white"
+          >
+            <img
+              src="../assets/images/our-journey/Timely Delivery.png"
+              class="max-w-[200px]"
+              alt=""
+            />
+            <h2 class="text-center font-bold text-2xl">Timely Delivery</h2>
+            <p class="font-medium">
+              We understand the significance of project schedules. Delays can be
+              costly and inconvenient. Elite Homes has a proven track record of
+              on-time delivery. We work diligently to ensure that your project
+              is completed as promised. Our commitment to punctuality means you
+              can plan with confidence.
+            </p>
+          </div>
+          <div
+            class="flex flex-col justify-start items-center shadow-lg p-4 rounded-xl transition-all duration-700 scale-100 bg-slate-200 text-black xl:shadow-2xl hover:scale-105 hover:bg-white"
+          >
+            <img
+              src="../assets/images/our-journey/stability.png"
+              class="max-w-[200px]"
+              alt=""
+            />
+            <h2 class="text-center font-bold text-2xl">Financial Stability</h2>
+            <p class="font-medium">
+              Financial stability is the bedrock of any construction project.
+              With Elite Homes, you can be assured of a smooth and uninterrupted
+              construction process. Our financial stability ensures that your
+              project progresses without disruptions. You can trust us to manage
+              resources efficiently and meet our financial obligations, creating
+              a secure environment for your project's success.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-contact relative isolate flex">
+      <div class="absolute inset-0 w-full h-full bg-black opacity-70 z-0"></div>
+      <div class="p-4 md:p-8 py-12 md:py-24 z-10 text-white text-center w-full">
+        <h2 class="text-lg lg:text-xl font-bold py-4">
+          Contact <span class="text-primary">Us Now</span>
+        </h2>
+        <h3 class="font-bold text-4xl md:text-5xl lg:text-6xl py-4">
+          Discuss with Us About Your Dream House
+        </h3>
+        <div class="flex justify-center">
+          <!-- <p class="py-2 lg:text-base xl:max-w-3xl">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+            doloribus eius mollitia voluptatem iusto facere et laboriosam,
+            necessitatibus nam soluta deleniti, unde voluptatum.
+          </p> -->
+        </div>
+        <div class="py-2 pt-6">
+          <a
+            href="../contact/"
+            class="p-4 px-6 font-medium inline-block text-white text-center shadow-lg bg-primary rounded-2xl transition-all duration-700 scale-100 hover:scale-105"
+            >Contact Us</a
+          >
+        </div>
+      </div>
+    </section>
+    <footer class="primary-footer bg-neutral-100">
+      <div class="p-4 py-6 flex justify-center md:pt-8">
+        <div class="max-w-[1400px]">
+          <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-4">
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <img
+                src="../assets/images/logo.png"
+                class="max-w-[200px]"
+                alt=""
+              />
+              <p class="max-w-sm text-center font-semibold xl:text-lg">
+                Elite Homes, we are dedicated to crafting exceptional living
+                spaces that reflect quality, innovation, and a legacy of
+                excellence.
+              </p>
+            </div>
+            <div class="flex justify-between gap-2">
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Important Link
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold md:font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="../contact/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Contact Us</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="../projects/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Projects</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Resources
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="../gallery/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Gallery</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="../faqs/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>FAQs</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 items-center pb-4">
+              <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">Contact</h3>
+              <ul
+                class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+              >
+                <li class="flex justify-center gap-2">
+                  <!-- <span>Address: </span> -->
+                  <h3 class="text-center">
+                    Office No.208, 2nd Floor, Gogol Vista, Margao, Goa -
+                    403601,India
+                  </h3>
+                </li>
+                <!-- <li class="flex gap-2">
+                  <span>Email: </span>
+                  <h3>elitehomes57@gmail.com</h3>
+                </li>
+                <li class="flex gap-2">
+                  <span>Phone: </span>
+                  <h3>9527105757/8007663535</h3>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-2 pb-2">
+            <ul
+              class="flex gap-6 w-full justify-center md:justify-end items-center"
+            >
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-facebook-f text-2xl transition-all duration-700 text-primary"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-x-twitter text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-instagram text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <!-- <li>
+                <a href="#"
+                  ><i
+                    class="fa-brands fa-square-pinterest text-green-600 text-4xl transition-all duration-700 hover:text-primary"
+                  ></i
+                ></a>
+              </li> -->
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-youtube transition-all duration-700 text-2xl text-primary"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+            <div class="w-full text-center md:text-base font-medium xl:text-lg">
+              <h3>
+                License in Construction of Residential and Commercial Buildings
+                , Developing of land and Real Estate activities, land Trading.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary text-white font-medium p-4 text-center">
+        <span
+          >Copyright © 2023 Elite Homes. All Rights Reserved by Samrdh Design
+          Studio & Branding</span
+        >
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="../js/nav.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script>
+      const certificateSlider = document.querySelector(".certificate-slider");
+      const slides = certificateSlider.querySelectorAll("li");
+
+      const slideCount = slides.length;
+      let activeSlide = 0;
+
+      // To change the images dynamically every
+      // 5 Secs, use SetInterval() method
+      setInterval(() => {
+        slides[activeSlide].classList.remove("active");
+        activeSlide++;
+        if (activeSlide === slideCount) {
+          activeSlide = 0;
+        }
+        slides[activeSlide].classList.add("active");
+      }, 3000);
+
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        // console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>

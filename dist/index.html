@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>
+    <link rel="stylesheet" href="output.css" />
+    <title>Elite Homes</title>
+  </head>
+  <body>
+    <header
+      class="primary-header fixed inset-0 w-full h-[50px] z-[9999999]"
+      id="primary-header"
+    >
+      <nav
+        class="w-full transition-all duration-500 bg-[#00000095] flex justify-between items-center shadow-md"
+        id="nav-header-primary"
+      >
+        <div class="p-6 px-12">
+          <img
+            src="./assets/images/logo.png"
+            class="max-w-[220px] transition-all duration-700"
+            id="nav-logo"
+            alt=""
+          />
+        </div>
+        <div
+          class="flex justify-center items-center lg:hidden cursor-pointer mr-8"
+          onclick="showSidebar()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="28"
+            viewBox="0 -960 960 960"
+            width="28"
+            class="fill-white h-10 w-10 bg-[#00000060] rounded-lg"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </div>
+        <ul
+          class="transition-all duration-700 flex lg:hidden flex-col justify-start items-start fixed top-0 right-0 h-screen bg-white w-0 shadow-lg"
+          id="sidebar"
+        >
+          <li class="w-full cursor-pointer ml-6" onclick="hideSidebar()">
+            <a href="#" class="p-6 flex items-center hover:text-primary">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="28"
+                viewBox="0 -960 960 960"
+                width="28"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="w-full">
+            <a
+              href="./"
+              class="p-8 w-full flex items-center hover:text-primary text-primary"
+              >Home</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="./projects/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="./gallery/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="./our-journey/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Our Journey</a
+            >
+          </li>
+          <li class="w-full">
+            <a
+              href="./contact/"
+              class="p-8 w-full flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+        <ul
+          class="w-full hidden lg:flex transition-all duration-500 justify-end items-center pr-6 lg:pr-12 xl:pr-16 2xl:pr-36 text-white font-bold text-lg xl:text-xl 2xl:text-2xl"
+          id="nav-items-header"
+        >
+          <li>
+            <a
+              href="./"
+              class="px-8 flex items-center hover:text-primary text-primary font-extrabold"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="./projects/"
+              class="px-8 flex items-center hover:text-primary"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="./gallery/"
+              class="px-8 flex items-center hover:text-primary"
+              >Gallery</a
+            >
+          </li>
+          <li>
+            <a
+              href="./our-journey/"
+              class="px-8 flex items-center hover:text-primary"
+              >Our Journey</a
+            >
+          </li>
+          <li>
+            <a
+              href="./contact/"
+              class="px-8 flex items-center hover:text-primary"
+              >Contact us</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="preloader">
+      <img src="./assets/images/loader.gif" alt="" />
+    </div>
+
+    <section class="hero-section h-[90vh] md:h-[85vh] xl:h-[80vh]">
+      <div class="relative isolate flex flex-col w-full">
+        <img
+          src="./assets/images/rose_villas_1.jpg"
+          class="object-cover h-[90vh] md:h-[85vh] xl:h-[80vh]"
+          alt=""
+        />
+        <div
+          class="absolute inset-0 w-full h-full z-[0] bg-gradient-to-b from-[#65cf83] to-[#3a3a3a] opacity-70"
+        ></div>
+        <div
+          class="absolute inset-0 z-[1] top-[30%] md:top-[45%] left-[10%] lg:top-[35%] xl:top-[40%]"
+        >
+          <div class="text-white md:max-w-[500px] lg:max-w-xl xl:max-w-4xl">
+            <h1
+              class="font-bold text-[40px] max-w-xs md:text-6xl md:max-w-md lg:text-7xl lg:max-w-xl xl:max-w-3xl 2xl:text-[5rem] leading-[1.2] md:leading-[4.5rem] drop-shadow-2xl"
+            >
+              Elevate Your Lifestyle with Elite Homes
+            </h1>
+            <p
+              class="mt-2 font-medium text-base lg:text-lg xl:text-xl 2xl:text-2xl"
+            >
+              Experience Luxury, Quality, and Innovation Beyond Imagination
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="absolute m-4 z-[1] top-[65%] right-0 bg-white shadow-xl rounded-sm md:w-[290px] md:h-[200px] md:right-[5%] xl:right-[10%] p-8 flex flex-col justify-center items-center"
+        >
+          <h2 class="font-bold text-2xl text-center xl:text-3xl">
+            Designing Lifestyle
+          </h2>
+          <!-- <p class="text-neutral-600 my-2">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
+              repellendus?
+            </p> -->
+
+          <a
+            href="./projects/"
+            class="bg-primary inline-block mt-2 transition-all duration-500 p-4 px-6 text-white text-center xl:text-lg font-bold shadow-2xl rounded-3xl scale-100 hover:scale-95"
+            >Explore Our Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="flex flex-col lg:flex-row lg:items-center">
+        <div>
+          <img
+            src="./assets/images/rose_villas_2.jpg"
+            class="object-cover lg:h-[65vh]"
+            alt=""
+          />
+        </div>
+        <div>
+          <div class="p-4 max-w-[700px] md:px-8 2xl:max-w-[850px]">
+            <h5
+              class="text-base font-bold lg:text-lg 2xl:text-xl leading-[1em] mt-5"
+            >
+              <span class="text-secondary">Our Journey</span>
+            </h5>
+            <h2 class="text-3xl font-bold leading-[1.1em] mt-4 xl:text-4xl">
+              Crafting Dreams into Reality
+            </h2>
+            <p class="text-base text-neutral-500 font-medium mt-4">
+              At Elite Homes, we believe in the power of a well-constructed
+              dream. Our journey in the world of construction is a story of
+              dedication, commitment, and a deep-rooted passion for building
+              spaces that define the essence of modern living. Our venture began
+              with Mohammad Juned Killedar, Saddam Hussain Kuknoor, and Syed
+              Furqanul Haque, the founders of our company. In 2017, they
+              embarked on their construction journey as a small-scale service
+              provider.
+            </p>
+            <div class="mt-4">
+              <h3 class="text-2xl font-bold xl:text-3xl">
+                A Tradition of Excellence
+              </h3>
+              <p class="text-base text-neutral-500 font-medium mt-2">
+                Our path in construction follows a family tradition, passed down
+                through generations. We are proud to follow in the footsteps of
+                our ancestors and continue the legacy of creating exceptional
+                living spaces.
+              </p>
+            </div>
+            <div class="mt-8">
+              <a
+                href="./our-journey/"
+                class="p-4 px-6 inline-block font-bold transition-all duration-500 text-white text-center shadow-lg bg-primary rounded-3xl scale-100 hover:scale-105 hover:bg-red-500"
+                >Our Journey</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- bg-gradient-to-b from-primary via-rose-50 to-[rgb(224_231_255)] -->
+    <section class="amenities-sections mt-6 md:mt-8 bg-slate-50">
+      <div
+        class="flex min-[600px]:hidden flex-col justify-center items-center gap-1"
+      >
+        <h3
+          class="font-bold text-center text-2xl md:text-3xl lg:text-4xl xl:text-6xl py-2 bg-gradient-to-r from-primary via-red-400 to-red-500 spotlight-bg"
+        >
+          Discover Our Construction Spotlights
+        </h3>
+        <h2
+          class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl pt-2"
+        >
+          Amenities
+        </h2>
+        <div class="bg-secondary h-[5px] w-[60%] rounded-sm mb-3"></div>
+      </div>
+      <div
+        class="hidden min-[600px]:block text-5xl xl:text-6xl 2xl:text-7xl font-bold -mb-72"
+      >
+        <h2
+          class="w-full h-full text-center top-[150%] py-16 md:my-20 lg:my-28 lg:mb-44 bg-gradient-to-r from-primary via-red-500 to-red-600 spotlight-bg"
+        >
+          Discover Our Construction Spotlights
+        </h2>
+      </div>
+      <div class="p-4">
+        <div class="flex flex-col justify-center items-center">
+          <!-- <div
+            class="grid grid-cols-1 justify-center items-center gap-6 sm:grid-cols-2 md:grid-cols-4 px-6 max-w-5xl"
+          >
+            <div class="bg-white shadow-md rounded-2xl p-4">
+              <img src="" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorum, corporis!
+              </p>
+            </div>
+            <div class="bg-white shadow-md rounded-2xl p-4">
+              <img src="" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorum, corporis!
+              </p>
+            </div>
+            <div class="bg-white shadow-md rounded-2xl p-4">
+              <img src="" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorum, corporis!
+              </p>
+            </div>
+            <div class="bg-white shadow-md rounded-2xl p-4">
+              <img src="" alt="" />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorum, corporis!
+              </p>
+            </div>
+          </div> -->
+          <div class="2xl:max-w-[1400px] flex justify-center items-center">
+            <div class="gallery">
+              <div class="left">
+                <div class="desktopContent">
+                  <div class="desktopContentSection oneclr">
+                    <h2 class="text-4xl font-bold">Gated Complex</h2>
+                    <p class="">
+                      Our gated complex is designed to offer you the peace of
+                      mind and security you deserve. This thoughtfully planned
+                      community provides controlled access, ensuring that you
+                      and your loved ones live in a safe and private
+                      environment.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection twoclr">
+                    <h2 class="text-4xl font-bold">Security Cabin</h2>
+                    <p class="">
+                      Our security cabin is the first line of defense in
+                      ensuring the safety and well-being of our residents.
+                      Located at the entrance of our gated complex, this cabin
+                      is staffed by trained security personnel who are vigilant
+                      and dedicated to your protection.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection threeclr">
+                    <h2 class="text-4xl font-bold">EV Charging Point</h2>
+                    <p class="">
+                      In line with our commitment to modern living and
+                      sustainability, our EV charging point is a feature that
+                      adds a touch of the future to our community. EVs are
+                      becoming increasingly popular for their eco-friendly and
+                      cost-effective advantages.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection fourclr">
+                    <h2 class="text-4xl font-bold">CCTV Surveillance</h2>
+                    <p class="">
+                      Your safety is paramount to us, and our CCTV surveillance
+                      system is a crucial component of our security
+                      infrastructure. This modern technology ensures that every
+                      corner of our community is under watchful eyes, providing
+                      you with peace of mind and a sense of security.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection fiveclr">
+                    <h2 class="text-4xl font-bold">Video Door Phone</h2>
+                    <p class="">
+                      Our video door phone system is your high-tech gateway to
+                      secure and convenient access control. This innovative
+                      feature is a modern solution that enhances both security
+                      and convenience and allows you to see and communicate with
+                      visitors before granting them entry.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection sixclr">
+                    <h2 class="text-4xl font-bold">Landscape Garden</h2>
+                    <p class="">
+                      Nature's Oasis at Your Doorstep. Our meticulously designed
+                      landscape garden is not just a green space; it's a
+                      sanctuary of nature, tranquility, and beauty that enriches
+                      your daily life. We have created a harmonious and
+                      eco-friendly environment, where residents can reconnect
+                      with the outdoors and enjoy the benefits of lush, green
+                      surroundings.
+                    </p>
+                  </div>
+                  <div class="desktopContentSection sevenclr">
+                    <h2 class="text-4xl font-bold">Covered Car Parking</h2>
+                    <p class="">
+                      Protecting Your Investment, Rain or Shine. Our covered car
+                      parking area is more than just a convenience; it's an
+                      essential component of our commitment to providing a
+                      secure and comfortable living environment. This feature
+                      ensures that your vehicles are shielded from the elements
+                      and enhances their longevity.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="right">
+                <!-- mobile content -->
+                <div class="mobileContent">
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/Gated Complex.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">Gated Complex</h2>
+                    <p class="font-medium">
+                      Our gated complex is designed to offer you the peace of
+                      mind and security you deserve. This thoughtfully planned
+                      community provides controlled access, ensuring that you
+                      and your loved ones live in a safe and private
+                      environment.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/Security Cabin.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">Security Cabin</h2>
+                    <p class="font-medium">
+                      Our security cabin is the first line of defense in
+                      ensuring the safety and well-being of our residents.
+                      Located at the entrance of our gated complex, this cabin
+                      is staffed by trained security personnel who are vigilant
+                      and dedicated to your protection.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/EV Charging.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">
+                      EV Charging Point
+                    </h2>
+                    <p class="font-medium">
+                      In line with our commitment to modern living and
+                      sustainability, our EV charging point is a feature that
+                      adds a touch of the future to our community. EVs are
+                      becoming increasingly popular for their eco-friendly and
+                      cost-effective advantages.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/cctv surveilance.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">
+                      CCTV Surveillance
+                    </h2>
+                    <p class="font-medium">
+                      Your safety is paramount to us, and our CCTV surveillance
+                      system is a crucial component of our security
+                      infrastructure. This modern technology ensures that every
+                      corner of our community is under watchful eyes, providing
+                      you with peace of mind and a sense of security.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/video door phone.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">
+                      Video Door Phone
+                    </h2>
+                    <p class="font-medium">
+                      Our video door phone system is your high-tech gateway to
+                      secure and convenient access control. This innovative
+                      feature is a modern solution that enhances both security
+                      and convenience and allows you to see and communicate with
+                      visitors before granting them entry.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/Landscaping Gardens.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">
+                      Landscape Garden
+                    </h2>
+                    <p class="font-medium">
+                      Nature's Oasis at Your Doorstep. Our meticulously designed
+                      landscape garden is not just a green space; it's a
+                      sanctuary of nature, tranquility, and beauty that enriches
+                      your daily life. We have created a harmonious and
+                      eco-friendly environment, where residents can reconnect
+                      with the outdoors and enjoy the benefits of lush, green
+                      surroundings.
+                    </p>
+                  </div>
+                  <div class="bg-white p-4 rounded-xl shadow-xl mt-4">
+                    <div class="white rounded-[6vw]">
+                      <img
+                        src="./assets/images/home/Covered Garage.png"
+                        class="rounded-[6vw]"
+                        alt=""
+                      />
+                    </div>
+                    <h2 class="font-bold text-2xl py-1 pt-3">
+                      Covered Car Parking
+                    </h2>
+                    <p class="font-medium">
+                      Protecting Your Investment, Rain or Shine. Our covered car
+                      parking area is more than just a convenience; it's an
+                      essential component of our commitment to providing a
+                      secure and comfortable living environment. This feature
+                      ensures that your vehicles are shielded from the elements
+                      and enhances their longevity.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- desktop content -->
+                <div
+                  class="hidden min-[600px]:block w-[clamp(250px,40vw,450px)]"
+                >
+                  <div
+                    class="flex flex-col justify-center items-center gap-1 mb-4"
+                  >
+                    <h2
+                      class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                    >
+                      Amenities
+                    </h2>
+                    <div class="bg-secondary h-[5px] w-[60%] rounded-sm"></div>
+                  </div>
+                </div>
+                <div class="desktopPhotos shadow-2xl">
+                  <div class="desktopPhoto red">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/Gated Complex.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto green">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/Security Cabin.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto pink">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/EV Charging.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto blue">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/cctv surveilance.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto yellow">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/video door phone.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto purple">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/Landscaping Gardens.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="desktopPhoto white">
+                    <div
+                      class="px-4 flex justify-center items-center w-full h-full"
+                    >
+                      <div>
+                        <img
+                          src="./assets/images/home/Covered Garage.png"
+                          class="object-cover h-full w-full shadow-2xl rounded-2xl"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="ongoing-prejects-section bg-gradient-to-b from-[rgb(224_231_255)] to-slate-200"
+    >
+      <div class="p-4 py-6 flex justify-center items-center">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-0 max-w-[1400px]"
+        >
+          <div class="bg-black flex flex-col justify-center gap-4 md:gap-8 p-6">
+            <h2 class="text-white font-bold text-3xl md:text-4xl">
+              Our Projects - A Legacy of Excellence
+            </h2>
+            <div class="h-1 bg-secondary w-[50%] rounded-sm"></div>
+
+            <p class="text-white text-sm md:text-base xl:text-lg 2xl:text-xl">
+              From luxury villas to modern apartments, our projects redefine
+              contemporary living.
+            </p>
+            <div class="mt-8">
+              <a
+                href="./our-journey/"
+                class="p-4 px-6 inline-block font-bold transition-all duration-500 text-white text-center lg:text-lg shadow-lg bg-primary rounded-3xl scale-100 hover:scale-105 hover:bg-red-500"
+                >Our Projects</a
+              >
+            </div>
+          </div>
+          <div class="h-[50vh] relative isolate">
+            <a href="./projects/#hubliVilla">
+              <img
+                src="./assets/images/hubli1.jpeg"
+                class="w-full h-[50vh] object-cover"
+                alt=""
+              />
+              <div
+                class="absolute inset-0 w-full h-full transition-all duration-700 bg-gradient-to-b from-emerald-300 to-black opacity-40 hover:from-[#65cf83] hover:to-[#3a3a3a] hover:opacity-60"
+              ></div>
+              <div
+                class="absolute h-1 bg-secondary bottom-[20%] right-[5%] w-[50%] rounded-sm"
+              ></div>
+              <div class="absolute bottom-[10%] right-[5%]">
+                <a
+                  href="#"
+                  class="text-white font-bold md:text-lg xl:text-xl 2xl:text-2xl"
+                  >Elite Home, Hubli Karnataka</a
+                >
+              </div>
+            </a>
+          </div>
+          <div class="h-[50vh] relative isolate">
+            <a href="./projects/#roseVillas">
+              <img
+                src="./assets/images/rose_villas_1.jpg"
+                class="w-full h-[50vh] object-cover"
+                alt=""
+              />
+              <div
+                class="absolute inset-0 w-full h-full transition-all duration-700 bg-gradient-to-b from-emerald-300 to-black opacity-40 hover:from-[#65cf83] hover:to-[#3a3a3a] hover:opacity-60"
+              ></div>
+              <div
+                class="absolute h-1 bg-secondary bottom-[20%] right-[5%] w-[50%] rounded-sm"
+              ></div>
+              <div class="absolute bottom-[10%] right-[5%]">
+                <a
+                  href="#"
+                  class="text-white font-bold md:text-lg xl:text-xl 2xl:text-2xl"
+                  >Rose Villa, Varca Goa</a
+                >
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="p-4 py-6">
+        <div class="pb-4 pt-8 flex flex-col justify-center items-center gap-1">
+          <h2
+            class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+          >
+            Gallery
+          </h2>
+          <div class="bg-secondary h-[5px] w-[25%] rounded-sm"></div>
+        </div>
+        <div id="wowslider-container1">
+          <div class="ws_images">
+            <ul>
+              <li>
+                <img
+                  src="data1/images/rose_villas_1.jpg"
+                  alt="Rose Villas, Varca Goa"
+                  title="Rose Villas, Varca Goa"
+                  id="wows1_0"
+                />
+              </li>
+              <li>
+                <img
+                  src="data1/images/rose_villas_2.jpg"
+                  alt="Rose Villas, Varca Goa"
+                  title="Rose Villas, Varca Goa"
+                  id="wows1_1"
+                />
+              </li>
+              <li>
+                <img
+                  src="data1/images/rose_villas_plan_1.jpg"
+                  alt="Rose Villas, Ground Floor Plan"
+                  title="Rose Villas, Ground Floor Plan"
+                  id="wows1_2"
+                />
+              </li>
+              <li>
+                <img
+                  src="data1/images/rose_villas_plan_2.jpg"
+                  alt="Rose Villas, First Floor Plan"
+                  title="Rose Villas, First Floor Plan"
+                  id="wows1_3"
+                />
+              </li>
+              <li>
+                <img
+                  src="data1/images/hubli1.jpeg"
+                  alt="3BH Villa, Hubli Karnataka"
+                  title="3BH Villa, Hubli Karnataka"
+                  id="wows1_4"
+                />
+              </li>
+              <li>
+                <img
+                  src="data1/images/hubli2.jpeg"
+                  alt="4BH Villa, Hubli Karnataka"
+                  title="4BH Villa, Hubli Karnataka"
+                  id="wows1_5"
+                />
+              </li>
+              <li>
+                <a href="http://wowslider.net"
+                  ><img
+                    src="data1/images/hubli3.jpeg"
+                    alt="3BH Villa, Hubli Karnataka"
+                    title="3BH Villa, Hubli Karnataka"
+                    id="wows1_6"
+                /></a>
+              </li>
+              <li>
+                <img
+                  src="data1/images/hubli4.jpeg"
+                  alt="3BH Villa, Hubli Karnataka"
+                  title="3BH Villa, Hubli Karnataka"
+                  id="wows1_7"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="ws_bullets">
+            <div>
+              <a href="#" title="rose_villas_1"
+                ><span
+                  ><img
+                    src="data1/tooltips/rose_villas_1.jpg"
+                    alt="rose_villas_1"
+                  />1</span
+                ></a
+              >
+              <a href="#" title="rose_villas_2"
+                ><span
+                  ><img
+                    src="data1/tooltips/rose_villas_2.jpg"
+                    alt="rose_villas_2"
+                  />2</span
+                ></a
+              >
+              <a href="#" title="rose_villas_plan_1"
+                ><span
+                  ><img
+                    src="data1/tooltips/rose_villas_plan_1.jpg"
+                    alt="rose_villas_plan_1"
+                  />3</span
+                ></a
+              >
+              <a href="#" title="rose_villas_plan_2"
+                ><span
+                  ><img
+                    src="data1/tooltips/rose_villas_plan_2.jpg"
+                    alt="rose_villas_plan_2"
+                  />4</span
+                ></a
+              >
+              <a href="#" title="3BHK Villa Hubli"
+                ><span
+                  ><img
+                    src="data1/tooltips/hubli1.jpeg"
+                    alt="3BH Villa, Hubli Karnataka"
+                  />5</span
+                ></a
+              >
+              <a href="#" title="3BH Villa, Hubli Karnataka"
+                ><span
+                  ><img
+                    src="data1/tooltips/hubli2.jpeg"
+                    alt="3BH Villa, Hubli Karnataka"
+                  />6</span
+                ></a
+              >
+              <a href="#" title="3BH Villa, Hubli Karnataka"
+                ><span
+                  ><img
+                    src="data1/tooltips/hubli3.jpeg"
+                    alt="3BH Villa, Hubli Karnataka"
+                  />7</span
+                ></a
+              >
+              <a href="#" title="3BH Villa, Hubli Karnataka"
+                ><span
+                  ><img
+                    src="data1/tooltips/hubli4.jpeg"
+                    alt="3BH Villa, Hubli Karnataka"
+                  />8</span
+                ></a
+              >
+            </div>
+          </div>
+          <div class="ws_script" style="position: absolute; left: -99%"></div>
+          <div class="ws_shadow"></div>
+        </div>
+        <div class="flex justify-center items-center md:mb-4">
+          <a
+            href="./gallery/"
+            class="p-4 px-6 inline-block font-medium transition-all duration-500 text-white text-center shadow-lg bg-primary rounded-[5rem] scale-100 hover:scale-105 hover:bg-red-700"
+            >View More</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="faqs-section bg-gradient-to-b from-slate-200 to-slate-100">
+      <div class="p-4 py-6 lg:py-8 2xl:py-10">
+        <div class="">
+          <div class="text-center">
+            <h2 class="font-bold text-base md:text-lg xl:text-xl 2xl:text-2xl">
+              <span class="text-secondary">FAQ's</span>
+            </h2>
+            <h3
+              class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-3 md:pb-4 lg:pb-8 xl:pb-10"
+            >
+              Your Queries, Our Answers
+            </h3>
+            <!-- <p class="text-neutral-600">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+              praesentium accusantium commodi, neque eligendi maiores.
+            </p> -->
+          </div>
+          <div
+            class="md:flex justify-center items-center gap-4 lg:gap-8 xl:gap-12 2xl:gap-16"
+          >
+            <div class="py-4">
+              <div class="accordion-wrapper">
+                <div class="accordion">
+                  <input type="radio" name="radio-a" id="check1" checked />
+                  <label class="accordion-label" for="check1"
+                    >What is Elite Homes' area of expertise in
+                    construction?</label
+                  >
+                  <div class="accordion-content">
+                    <p>
+                      Elite Homes specializes in residential construction,
+                      including luxury villas and homes.
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="radio" name="radio-a" id="check2" />
+                  <label class="accordion-label" for="check2"
+                    >Where do elite homes operate?</label
+                  >
+                  <div class="accordion-content">
+                    <p>
+                      We operate in prime locations all over India, offering our
+                      construction services.
+                    </p>
+                  </div>
+                </div>
+                <div class="accordion">
+                  <input type="radio" name="radio-a" id="check3" />
+                  <label class="accordion-label" for="check3"
+                    >What sets Elite Homes apart from other construction
+                    companies?</label
+                  >
+                  <div class="accordion-content">
+                    <p>
+                      Our commitment to quality, attention to detail, and
+                      customer satisfaction make us stand out. We bring luxury
+                      and excellence to every project.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="grid grid-cols-1 py-3 gap-2 md:gap-3 lg:gap-4 2xl:grid-cols-2 justify-center items-center"
+              >
+                <div class="flex flex-row justify-start items-center gap-2">
+                  <div
+                    class="p-4 border-2 border-primary flex justify-center items-center aspect-square transition-all duration-700 hover:border-black hover:bg-primary text-primary hover:text-white"
+                  >
+                    <i class="fa-solid fa-envelope text-3xl"></i>
+                  </div>
+                  <p class="text-secondary font-semibold lg:text-lg">
+                    elitehomes57@gmail.com
+                  </p>
+                </div>
+
+                <div class="flex flex-row justify-start items-center gap-2">
+                  <div
+                    class="p-4 border-2 border-primary flex justify-center items-center aspect-square transition-all duration-700 hover:border-black hover:bg-primary text-primary hover:text-white"
+                  >
+                    <i class="fa-solid fa-phone-volume text-3xl"></i>
+                  </div>
+                  <p class="text-secondary font-semibold lg:text-lg">
+                    9513105757
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <img
+                src="./assets/images/home/Faq.png"
+                class="md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-3xl"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="teams-section bg-gradient-to-b from-emerald-50 to-white">
+      <div class="p-4 py-6 lg:py-8 2xl:py-10 flex justify-center items-center">
+        <div class="">
+          <div class="text-center">
+            <h2 class="font-bold text-base md:text-lg xl:text-xl 2xl:text-2xl">
+              Behind <span class="text-secondary">The Desk</span>
+            </h2>
+            <h3
+              class="font-extrabold text-center text-3xl md:text-4xl lg:text-5xl xl:text-6xl py-3"
+            >
+              The Professional Team
+            </h3>
+            <p
+              class="text-neutral-600 font-medium pb-4 xl:pb-6 md:text-lg lg:text-xl 2xl:text-2xl"
+            >
+              Meet Our Experts: Your Vision, Our Expertise
+            </p>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-3 md:gap-6 lg:gap-10 xl:gap-12 2xl:gap-14 md:px-8"
+          >
+            <div class="flex flex-col justify-center items-center gap-2 mb-2">
+              <img
+                src="./assets/images/person.png"
+                class="lg:max-w-md"
+                alt=""
+              />
+              <h4
+                class="font-bold md:text-[1rem] xl:text-[1.5rem] leading-[0] py-2"
+              >
+                Mohammad Juned Killedar
+              </h4>
+              <div class="flex flex-col justify-center items-center">
+                <p
+                  class="text-neutral-600 md:text-[1rem] xl:text-[1.5rem] font-medium"
+                >
+                  Founder
+                </p>
+                <p
+                  class="text-neutral-600 md:text-[1rem] xl:text-[1.5rem] font-medium leading-none"
+                >
+                  9527105757
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center gap-2 mb-2">
+              <img
+                src="./assets/images/person.png"
+                class="lg:max-w-md"
+                alt=""
+              />
+
+              <h4
+                class="font-bold md:text-[1rem] xl:text-[1.5rem] leading-[0] py-2"
+              >
+                Saddam Hussain Kuknoor
+              </h4>
+              <div class="flex flex-col justify-center items-center">
+                <p
+                  class="text-neutral-600 md:text-[1rem] xl:text-[1.5rem] font-medium"
+                >
+                  Partner
+                </p>
+                <p
+                  class="text-neutral-600 md:text-[1rem] xl:text-[1.5rem] font-medium leading-none"
+                >
+                  8007663535
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section mt-3">
+      <div
+        class="p-4 contact-bg py-6 flex flex-col md:flex-row md:gap-16 md:justify-center md:items-center"
+      >
+        <div class="py-2 z-10 text-white">
+          <h2 class="text-xl font-semibold mb-2 md:text-2xl xl:text-4xl">
+            Get in Touch with Us!
+          </h2>
+          <p
+            class="text-xl font-semibold flex flex-col gap-1 md:text-3xl lg:text-4xl xl:text-6xl"
+          >
+            <span> We Offer Practical Solution to</span>
+            <span>All Your Space Problems.</span>
+          </p>
+        </div>
+        <div class="py-4 z-10 text-white">
+          <form class="flex flex-col w-full gap-4">
+            <label class="">
+              <span class="font-semibold">Enter Name</span>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                class="bg-green-50 w-full border rounded-md p-3 text-black"
+              />
+            </label>
+            <label class="flex flex-col w-full">
+              <span class="font-semibold">Enter Email</span>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                class="bg-green-50 w-full border rounded-md p-3 text-black"
+              />
+            </label>
+            <label class="flex flex-col w-full">
+              <span class="font-semibold">Enter Subject</span>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                required
+                class="bg-green-50 w-full border rounded-md p-3 text-black"
+              />
+            </label>
+            <label class="flex flex-col w-full">
+              <span class="font-semibold">Your Message</span>
+              <textarea
+                name="message"
+                id="message"
+                class="bg-green-50 w-full border rounded-md p-3 text-black"
+              ></textarea>
+            </label>
+            <div>
+              <button
+                type="button"
+                onclick="sendMail()"
+                class="p-3 px-5 text-white text-center shadow-lg bg-primary font-bold 2xl:text-lg"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61580.18728489573!2d73.93555053789301!3d15.280785632144635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfb3d17b623081%3A0x53f0eed33fa4a47!2sMargao%2C%20Goa%20403601!5e0!3m2!1sen!2sin!4v1698903978950!5m2!1sen!2sin"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        class="w-full h-[40vh]"
+      ></iframe>
+    </section>
+    <footer class="primary-footer bg-neutral-100">
+      <div class="p-4 py-6 flex justify-center md:pt-8">
+        <div class="max-w-[1400px]">
+          <div class="grid grid-cols-1 md:grid-cols-3 items-start gap-4">
+            <div class="flex flex-col gap-2 justify-center items-center">
+              <img
+                src="./assets/images/logo.png"
+                class="max-w-[200px]"
+                alt=""
+              />
+              <p class="max-w-sm text-center font-semibold xl:text-lg">
+                Elite Homes, we are dedicated to crafting exceptional living
+                spaces that reflect quality, innovation, and a legacy of
+                excellence.
+              </p>
+            </div>
+            <div class="flex justify-between gap-2">
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Important Link
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold md:font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="./contact/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Contact Us</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="./projects/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Projects</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col gap-2 items-center">
+                <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">
+                  Resources
+                </h3>
+                <ul
+                  class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+                >
+                  <li>
+                    <a href="./gallery/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>Gallery</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="./faqs/" class="flex gap-2 items-center">
+                      <!-- <i class="fa-solid fa-hand-point-right"></i> -->
+                      <span>FAQs</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex flex-col gap-2 items-center pb-4">
+              <h3 class="font-bold text-lg lg:text-xl 2xl:text-2xl">Contact</h3>
+              <ul
+                class="text-blue-500 text-base flex flex-col gap-2 font-semibold lg:text-lg 2xl:text-xl"
+              >
+                <li class="flex justify-center gap-2">
+                  <!-- <span>Address: </span> -->
+                  <h3 class="text-center">
+                    Office No.208, 2nd Floor, Gogol Vista, Margao, Goa -
+                    403601,India
+                  </h3>
+                </li>
+                <!-- <li class="flex gap-2">
+                  <span>Email: </span>
+                  <h3>elitehomes57@gmail.com</h3>
+                </li>
+                <li class="flex gap-2">
+                  <span>Phone: </span>
+                  <h3>9527105757/8007663535</h3>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-2 pb-2">
+            <ul
+              class="flex gap-6 w-full justify-center md:justify-end items-center"
+            >
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-facebook-f text-2xl transition-all duration-700 text-primary"
+                  ></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-x-twitter text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-instagram text-2xl transition-all duration-700 text-primary"
+                  ></i
+                ></a>
+              </li>
+              <!-- <li>
+                <a href="#"
+                  ><i
+                    class="fa-brands fa-square-pinterest text-green-600 text-4xl transition-all duration-700 hover:text-primary"
+                  ></i
+                ></a>
+              </li> -->
+              <li>
+                <a href="#">
+                  <i
+                    class="fa-brands fa-youtube transition-all duration-700 text-2xl text-primary"
+                  ></i
+                ></a>
+              </li>
+            </ul>
+            <div class="w-full text-center md:text-base font-medium xl:text-lg">
+              <h3>
+                License in Construction of Residential and Commercial Buildings
+                , Developing of land and Real Estate activities, land Trading.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-primary text-white font-medium p-4 text-center">
+        <span
+          >Copyright © 2023 Elite Homes. All Rights Reserved by Samrdh Design
+          Studio & Branding</span
+        >
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.4/smooth-scrollbar.js"
+      integrity="sha512-3f8C6NAQZv0YfwHFnjF231IIVcfZPnzL8EcHhNlzcoSRoEvC/iKDbtC+oYvL+0fRmEUMUYSvrZSE08TcRZYpgA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script type="text/javascript" src="engine1/wowslider.js"></script>
+    <script type="text/javascript" src="engine1/script.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script src="./js/nav.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("gX_rfoVpQp2a8WtD8");
+      })();
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+    <script>
+      function sendMail() {
+        var params = {
+          name: document.getElementById("name").value,
+          email: document.getElementById("email").value,
+          subject: document.getElementById("subject").value,
+          message: document.getElementById("message").value,
+        };
+
+        const serviceID = "service_7zuyqai";
+        const templateID = "template_zbedilu";
+
+        emailjs
+          .send(serviceID, templateID, params)
+          .then((res) => {
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("message").value = "";
+            // console.log(res);
+            alert("Your message sent successfully!!");
+          })
+          .catch((err) => console.log(err));
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const details = gsap.utils.toArray(
+        ".desktopContentSection:not(:first-child)"
+      );
+      const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+
+      const sections = gsap.utils.toArray(".desktopContentSection");
+      const container = document.querySelector(".amenities-sections");
+
+      gsap.set(photos, { yPercent: 101 });
+
+      const allPhotos = gsap.utils.toArray(".desktopPhoto");
+
+      // create
+      let mm = gsap.matchMedia();
+
+      // add a media query. When it matches, the associated function will run
+      mm.add("(min-width: 600px)", () => {
+        // this setup code only runs when viewport is at least 600px wide
+        // console.log("desktop");
+
+        ScrollTrigger.create({
+          trigger: ".gallery",
+          start: "top top",
+          end: "bottom bottom",
+          pin: ".right",
+        });
+
+        //create scrolltrigger for each details section
+        //trigger photo animation when headline of each details section
+        //reaches 80% of window height
+        details.forEach((detail, index) => {
+          let headline = detail.querySelector("h2");
+          let animation = gsap
+            .timeline()
+            .to(photos[index], { yPercent: 0 })
+            .set(allPhotos[index], { autoAlpha: 0 });
+
+          ScrollTrigger.create({
+            trigger: headline,
+            start: "top 70%",
+            end: "top 30%",
+            animation: animation,
+            scrub: true,
+            markers: false,
+          });
+        });
+
+        // Setting the initial background color
+        // gsap.set(container, {
+        //   backgroundColor: "lightblue",
+        // });
+
+        return () => {
+          // optional
+          // custom cleanup code here (runs when it STOPS matching)
+          //   console.log("mobile")
+        };
+      });
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        // console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
